@@ -8,17 +8,22 @@ const insta = {
 	scroll: {
 		action() {},
 
-		start(interval = 1000, maxvalue = 1000) {
-      let count = 1;
+		start(interval = 9000, maxvalue = 1000) {
+			if(interval < 3000) {
+				console.log('интервал не может быть меньше 3 секунды');
+				interval = 3000;
+			}
+			let count = 1;
 			this.action = setInterval( () => {
-		    if(count >= maxvalue) {
-		      clearInterval(this.action);
-		    }
-		    document.querySelector("._gs38e").scrollTo(0,document.querySelector("._gs38e").scrollHeight);
-		    count += 1;
-		  }, interval);
+				if(count >= maxvalue) {
+					clearInterval(this.action);
+				}
+				document.querySelector("._gs38e").scrollTo(0,document.querySelector("._gs38e").scrollHeight);
+				count += 1;
+			}, interval);
 
 			console.log('Будет завершено', new Date(Date.now() + (interval * maxvalue) ));
+
 		},
 
 		stop() {
@@ -31,6 +36,10 @@ const insta = {
 		action() {},
 
 		start(interval = 35000, maxvalue = 1000) {
+			if(interval < 3000) {
+				console.log('интервал не может быть меньше 3 секунды');
+				interval = 3000;
+			}
       let count = 1;
 
 			this.action = setInterval( () => {
@@ -59,6 +68,10 @@ const insta = {
 		action() {},
 
 		start(interval = 30000, maxvalue = 1000, from = 1000) {
+			if(interval < 10000) {
+				console.log('интервал не может быть меньше 10 секунд');
+				interval = 10000;
+			}
 			let list = document.querySelectorAll('._gs38e ._qv64e._gexxb');
 			let count = 1;
 			this.action = setInterval( () => {
@@ -87,6 +100,10 @@ const insta = {
 		action() {},
 
 		start(interval = 45000, maxvalue = 1000) {
+			if(interval < 3000) {
+				console.log('интервал не может быть меньше 3 секунды');
+				interval = 3000;
+			}
 			let count = 1;
 			let list = [...document.querySelectorAll('._gs38e ._qv64e._t78yp._4tgw8._njrw0')].reverse();
 
