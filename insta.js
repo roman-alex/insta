@@ -4,6 +4,10 @@
 // skype: roman-alex555
 
 const insta = {
+	// getListLength
+	getListLength(){
+		console.log(`В списке ${document.querySelectorAll('._gs38e ._qv64e').length} пользователей, из них ${document.querySelectorAll('._gs38e ._qv64e._gexxb').length} еще не добавлены`);
+	},
 	// scroll
 	scroll: {
 		action() {},
